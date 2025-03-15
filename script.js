@@ -84,43 +84,73 @@ window.onload = function () {
     }
 }
 
-// Pop-up de Login
+// ************ Pop-up de Login ********************
 const loginPopup = document.getElementById('login-popup');
 const closePopup = document.querySelector('.close-popup');
 const loginForm = document.getElementById('login-form');
-const loginBtn = document.getElementById('fazer-login');
+const loginButtons = document.querySelectorAll('#fazer-login'); // Seleciona todos os botões de login
 
-if (loginBtn) {
-    loginBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginPopup.style.display = 'flex';
+// Abrir pop-up ao clicar em qualquer botão "Fazer Login"
+if (loginButtons) {
+    loginButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginPopup.style.display = 'flex';
+        });
     });
 }
 
+// Fechar pop-up ao clicar no botão de fechar
 if (closePopup) {
     closePopup.addEventListener('click', () => {
         loginPopup.style.display = 'none';
+        loginForm.reset(); // Reseta o formulário
     });
 }
 
+// Fechar pop-up ao clicar fora dele
+window.addEventListener('click', (e) => {
+    if (e.target === loginPopup) {
+        loginPopup.style.display = 'none';
+        loginForm.reset(); // Reseta o formulário
+    }
+});
+
+// Fechar pop-up ao pressionar a tecla "Esc"
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && loginPopup.style.display === 'flex') {
+        loginPopup.style.display = 'none';
+        loginForm.reset(); // Reseta o formulário
+    }
+});
+
+// Validação do formulário de login
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const email = document.getElementById('email')?.value;
         const senha = document.getElementById('senha')?.value;
 
-        if (email && senha) {
-            alert('Login realizado com sucesso!');
-            loginPopup.style.display = 'none';
-        } else {
+        if (!email || !senha) {
             alert('Preencha todos os campos!');
+            return;
         }
+
+        // Validação básica de e-mail
+        if (!validateEmail(email)) {
+            alert('Por favor, insira um e-mail válido.');
+            return;
+        }
+
+        // Simulação de login bem-sucedido
+        alert('Login realizado com sucesso!');
+        loginPopup.style.display = 'none';
+        loginForm.reset(); // Reseta o formulário
     });
 }
 
-window.addEventListener('click', (e) => {
-    if (e.target === loginPopup) {
-        loginPopup.style.display = 'none';
-    }
-});
-
+// Função para validar e-mail
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
