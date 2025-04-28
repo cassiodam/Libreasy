@@ -1,2 +1,0 @@
-# Libreasy
-TCC
