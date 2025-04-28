@@ -1,4 +1,6 @@
-# React + Vite
+# NodeJS + React + Vite
+
+1st step: Download and install  [@NodeJS](https://nodejs.org/en)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
