@@ -1,14 +1,19 @@
 // declara variavel Header armazenando a função Header para exportação e renderização
+import { Link } from "react-router-dom"
+
+
 const Footer = () => {
 
     return (
-    <footer>
-        <div class="footer-left">
-            <img class="h-8 hover:animate-bounce" src="{% static 'Images/Libreasy_logo.jpg' %}" alt="Logo Libreasy" class="footer-logo"/>
+    <footer className="bg-black shadow-md py-4 mt-auto">
+        <div className="flex justify-start" >
+            <p> Logo-Libreasy </p>
         </div>
-        <div class="footer-right">
-            <a href="">Contato</a>
-            <a href="">Developers</a>
+        <div className="flex justify-end" >
+            <ul>
+            <Link className="hover:text-gray-400" to="/contato">Contato</Link>
+            <Link className="hover:text-gray-400" to="/developers"> Devs</Link>
+            </ul>
         </div>
         
     </footer>

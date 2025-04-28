@@ -1,28 +1,33 @@
 // declara variavel Header armazenando a função Header para exportação e renderização
+import { Link } from "react-router-dom"
+
 const Header = () => {
 
     return (
-    <header>
-        <div class="header-left">
-        <a href="#" class="logo">Nome da Biblioteca</a>
+    <header className="bg-black shadow-md">
+        {/* header esquerdo */}
+        <div className="flex justify-start" >
+        <Link className="hover:text-gray-400" to="/">Nome-Biblioteca</Link>
     </div>
-    <div class="header-right">
-        <nav>
-            <ul>
+    {/* Header direito */}
+    <div class="flex justify-end">
+        
+            <ul className="flex gap-4 list-none p-0">
   
                 <li>
-                    <a href="#" class="perfil-btn"></a>
+                    <Link className="hover:text-gray-400" to="/minha-conta">Minha-Conta</Link>
                 </li>
                 <li>
-                    <a href="#" class="perfil-btn">Sair</a>
+                    <a>Sair</a>
                 </li>
                 
                 <li>
-                    <button id="theme-toggle">🌙</button>
+                    <button>🌙</button>
                 </li>
             </ul>
-        </nav>
+        
     </div>
+        
         
     </header>
     )
