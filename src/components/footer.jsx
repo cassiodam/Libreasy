@@ -18,7 +18,7 @@ const Footer = () => {
 
         {/* footer lado direito */}
         <div className="flex justify-end" >
-            <Link className="hover:text-gray-400 font-bold" to="/contato">Contato</Link>
+            <Link className="hover:text-gray-400" to="/contato">Contato</Link>
         </div>
         
     </footer>
