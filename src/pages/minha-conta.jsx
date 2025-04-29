@@ -12,7 +12,7 @@ const MinhaConta = () => {
                 <p> Nome: </p>
                 <p> E-mail: </p>
                 <p> Senha: </p>
-                <button className="hover:text-gray-400" to="/"> Alterar dados </button>
+                <button className="hover:text-gray-400"> Alterar dados </button>
              </div>
 
                 

@@ -6,14 +6,19 @@ const Footer = () => {
 
     return (
     <footer className="bg-black shadow-md py-4 mt-auto">
-        <div className="flex justify-start" >
-            <p> Logo-Libreasy </p>
+
+        {/* footer lado esquerdo */}
+        <div className="hover:bg-gray-800 " >
+        <Link to="/developers">
+            <figure className="w-14 h-14 rounded overflow-hidden">
+                <img src="./src/assets/logo.png" alt="logo"/>
+            </figure>
+        </Link>
         </div>
+
+        {/* footer lado direito */}
         <div className="flex justify-end" >
-            <ul>
-            <Link className="hover:text-gray-400" to="/contato">Contato</Link>
-            <Link className="hover:text-gray-400" to="/developers"> Devs</Link>
-            </ul>
+            <Link className="hover:text-gray-400 font-bold" to="/contato">Contato</Link>
         </div>
         
     </footer>

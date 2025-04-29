@@ -7,7 +7,7 @@ const Catalogo = () => {
             <>
             <Header/>
              <main>
-                <h1> Catalogo de livros </h1>
+                <h1> Catálogo de Livros </h1>
              </main>
             <Footer/>
             </>

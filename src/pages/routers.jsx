@@ -7,6 +7,7 @@ import Developers from "./developers";
 import CriarConta from './criar-conta';
 import Login from './login';
 import MinhaConta from './minha-conta';
+import Admin from './admin';
 
 
 const Routers = () => {
@@ -21,6 +22,8 @@ const Routers = () => {
             <Route path="/criar-conta" element={<CriarConta/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/minha-conta" element={<MinhaConta/>}/>
+            <Route path="/admin" element={<Admin/>}/>
+
 
         </Routes>
         </Router>   

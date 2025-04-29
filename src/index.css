@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Zerando o CSS - Reset Global */
 
 *,
 *::before,
@@ -10,13 +9,50 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   font-size: 100%;
-}
-
-body {
   font-family: 'Arial', sans-serif; /* ou outra fonte que preferir */
   line-height: 1.5;
+
   background-color: #242424; /* Cor de fundo neutra */
   color: white; /* Cor de texto neutra */
+  align-content: center;
+}
+
+header {
+  display: flex;
+  max-height: 5vh;
+  justify-content: space-between;
+  padding: 0.625em 1.25em;
+}
+
+main {
+  min-height: 90vh;
+  padding: 1.25em; /* 20px em em */
+  gap: 1.25em; /* Espaçamento entre os elementos */
+  margin-left: 3%;
+  margin-right: 3%;
+  padding-top: 03%;
+}
+
+footer {
+  display: flex;
+  max-height: 5vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625em 1.25em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  gap: 2.5em;
+}
+
+h2 {
+  font-size: 2rem;
+  gap: 2em;
+}
+p {
+  font-size: 1rem;
+  gap: 2em;
 }
