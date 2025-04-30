@@ -1,5 +1,6 @@
 import Header from "../components/header"
 import Footer from "../components/footer"
+import TelaDividida from '../components/teladividida';
 import { Link } from "react-router-dom"
 
 const Home = () => {
@@ -9,6 +10,11 @@ const Home = () => {
         <body>
         <Header/>
         <main >
+
+        <TelaDividida
+        imagemSrc="./src/assets/logo.png"
+        imagemAlt="Imagem"
+        > 
         <h1 class="font-bold text-4xl">
             Bem-vindos ao Libreasy
         </h1>
@@ -23,12 +29,15 @@ const Home = () => {
             </li>
             <li>
             <p> • Caso tenha interesse em algum dos livros visualizados, deve se dirigir presencialmente à biblioteca em questão
-             conforme informações na aba <Link className="hover:underline hover:text-gray-400 italic " to="/contato">Contato,</Link>como endereço e horário de funcionamento.</p>
+             conforme informações na aba <Link className="hover:underline hover:text-gray-400 italic " to="/contato">Contato</Link>, como endereço e horário de funcionamento.</p>
             </li>
-            <li> <Link className="font-bold text-3xl hover:underline hover:text-gray-400 italic flex justify-center" to="/catalogo">
+            <li> <Link className="font-bold text-2xl hover:underline hover:text-gray-400 italic flex justify-center" to="/catalogo">
             Clique aqui para acessar o catalogo informativo</Link>   </li>
             </ol>
         </div>
+        </TelaDividida>
+
+    
         
         </main>
         <Footer/>
